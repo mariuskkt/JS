@@ -1,23 +1,60 @@
 'use strict';
 
-const shoppingCart = {
-    milk: 2,
-    beer: 3
-};
+const input = Number(prompt('What\'s your age?'));
+
+const rapLyrics = [
+    {
+        word: 'bitch',
+        naughty: true
+    },
+    {
+        word: 'guns',
+        naughty: false
+    },
+    {
+        word: 'hoe',
+        naughty: true
+    },
+    {
+        word: 'drugs',
+        naughty: false
+    },
+    {
+        word: 'coke',
+        naughty: true
+    },
+    {
+        word: 'nigga',
+        naughty: true
+    }
+];
 
 
-let question;
+const result = input >= 18 ?
+    rapLyrics :
+    rapLyrics.filter(censor);
 
-do {
-    const name = prompt('Write in name of a product:');
-    const quantity = prompt('Write in quantity:');
-
-    shoppingCart[name] = Number(quantity);
-
-    question = prompt('Do you want to add one more item?Answer \'Y\' for yes');
-} while (question === 'Y');
-
-for (const name in shoppingCart) {
-    alert(name + ' quantity ' + shoppingCart[name])
+function censor(value) {
+    return !value.naughty;
 }
-console.log(shoppingCart);
+
+function getWords(value) {
+    return value.word;
+}
+
+const header = document.createElement('header');
+const main = document.createElement('main');
+const lyrics = result.map(getWords);
+const h1 = document.createElement('h1');
+const headerText = document.createTextNode('Rap song lyrics');
+const paragraph = document.createElement('p');
+const text = document.createTextNode(lyrics);
+
+h1.appendChild(headerText);
+paragraph.appendChild(text);
+
+header.appendChild(h1);
+main.appendChild(paragraph);
+
+document.body.appendChild(header);
+document.body.appendChild(main);

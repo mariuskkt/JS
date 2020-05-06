@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+header {
+     text-align: center;
+    margin: 20px 0;
+    font-size: 35px;
+}
+
+p{
+    font-size: 25px;
+    text-transform: uppercase;
+    margin-left: 15px;
+}
