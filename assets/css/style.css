@@ -4,13 +4,60 @@
 }
 
 header {
-     text-align: center;
+    text-align: center;
     margin: 20px 0;
     font-size: 35px;
 }
 
-p{
+p {
     font-size: 25px;
     text-transform: uppercase;
     margin-left: 15px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+button {
+    margin: 10px;
+    font-size: 15px;
+    padding: 10px;
+    background-color: darkslategray;
+    color: beige;
+    border-radius: 15px;
+    border: 0;
+}
+
+input {
+    margin: 20px 0;
+    font-size: 20px;
+    background-color: beige;
+    border: 0px;
+    padding: 5px;
+    outline: none;
+}
+
+input[name='edit'] {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,50%);
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+span {
+    font-size: 20px;
 }
