@@ -1,41 +1,42 @@
 'use strict';
+let h1 = document.createElement("h1");
+const button = document.querySelector("button");
+document.body.appendChild(h1);
+h1.style.position = 'fixed';
+const section = document.querySelector('section');
 
-const textarea = document.querySelector('textarea');
-const button = document.querySelector('button');
-const main = document.querySelector('main');
-
-button.addEventListener('click', onClick);
-
-function onClick(event) {
-    const article = document.createElement('article');
-    const image = document.createElement('section');
-    const chatBubble = document.createElement('section');
-    const paragraph = document.createElement('p');
-    const value = textarea.value.trim();
-    const arrayParagraph = textarea.value.split('\n');
-
-    arrayParagraph.forEach(para => {
-        const paragraph = document.createElement('p');
-        const textNode = document.createTextNode(para);
-        paragraph.appendChild(textNode);
-        chatBubble.appendChild(paragraph);
-    });
-
-    article.className = 'message self';
-    image.className = 'image';
-    chatBubble.className = 'chat-bubble';
-    paragraph.innerHTML = value;
-
-    // article.classList.add('message', 'self');
-    // image.classList.add('image');
-    // image.classList.add('chat-bubble');
-    // paragraph.innerHTML = value;
-
-    if (value) {
-        article.appendChild(image);
-        article.appendChild(chatBubble);
-        main.appendChild(article);
+button.addEventListener('click', () => {
+        scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            }
+        )
     }
+);
 
-    textarea.value = '';
+function buttonDisplay() {
+    pageYOffset >= innerHeight ? button.style.display = 'inline-block' : button.style.display = 'none';
+}
+
+addEventListener('scroll', () => {
+    console.clear();
+    const currentHeight = pageYOffset;
+    const bodyHeight = document.body.clientHeight;
+
+    let percentage;
+    let num;
+
+    buttonDisplay();
+
+    num = Number(currentHeight * 100 / bodyHeight);
+    percentage = Number(num * 100 / 75);
+    section.style.width = Math.round(percentage) + '%';
+    // screenColor(percentage);
+    h1.innerHTML = Math.round(percentage);
+});
+
+function screenColor(percentage) {
+    const number = Math.round(percentage * 2.55);
+    document.body.style.backgroundColor = 'rgb(' + number + ',' + number + ',' + number + ')';
 }
