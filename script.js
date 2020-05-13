@@ -1,42 +1,58 @@
 'use strict';
-let h1 = document.createElement("h1");
-const button = document.querySelector("button");
-document.body.appendChild(h1);
-h1.style.position = 'fixed';
-const section = document.querySelector('section');
 
-button.addEventListener('click', () => {
-        scrollTo({
-                top: 0,
-                left: 0,
-                behavior: 'smooth'
-            }
-        )
+const carPic = document.querySelector('img');
+const horn = new Audio('car+horn+x.mp3');
+const engine = new Audio('Corvette+pass.mp3');
+
+const car = {
+    positionX: 0,
+    positionY: 0,
+    rotation: 0,
+    moveLeft() {
+        this.positionX -= 10;
+        this.rotation = 0;
+    },
+    moveUp() {
+        this.positionY -= 10;
+        this.rotation = 90;
+    },
+    moveRight() {
+        this.positionX += 10;
+        this.rotation = 180;
+    },
+    moveDown() {
+        this.positionY += 10;
+        this.rotation = 270;
+    },
+    render() {
+        carPic.style.left = this.positionX + 'px';
+        carPic.style.top = this.positionY + 'px';
+        carPic.style.transform = 'rotate(' + this.rotation + 'deg)';
+        engine.play();
+    },
+    move(event) {
+        if (event.keyCode === 87) {
+            car.moveUp();
+            car.render();
+        }
+        if (event.keyCode === 83) {
+            car.moveDown();
+            car.render();
+        }
+        if (event.keyCode === 68) {
+            car.moveRight();
+            car.render();
+        }
+        if (event.keyCode === 65) {
+            car.moveLeft();
+            car.render();
+        }
+        if (event.keyCode === 32) {
+            horn.play();
+        }
     }
-);
+};
 
-function buttonDisplay() {
-    pageYOffset >= innerHeight ? button.style.display = 'inline-block' : button.style.display = 'none';
-}
+document.addEventListener('keydown', car.move);
 
-addEventListener('scroll', () => {
-    console.clear();
-    const currentHeight = pageYOffset;
-    const bodyHeight = document.body.clientHeight;
 
-    let percentage;
-    let num;
-
-    buttonDisplay();
-
-    num = Number(currentHeight * 100 / bodyHeight);
-    percentage = Number(num * 100 / 75);
-    section.style.width = Math.round(percentage) + '%';
-    // screenColor(percentage);
-    h1.innerHTML = Math.round(percentage);
-});
-
-function screenColor(percentage) {
-    const number = Math.round(percentage * 2.55);
-    document.body.style.backgroundColor = 'rgb(' + number + ',' + number + ',' + number + ')';
-}
