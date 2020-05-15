@@ -1,5 +1,4 @@
 html {
-    background-image: url(https://image.freepik.com/free-vector/top-view-city-map_23-2147630665.jpg);
     background-size: cover;
     font-family: sans-serif;
     font-size: 14px;
@@ -14,7 +13,8 @@ img {
     left: 0;
     transition: 0.2s;
 }
-section{
+
+section {
     height: 10px;
     width: 10px;
     background-color: darkred;
