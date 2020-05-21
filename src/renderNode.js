@@ -12,27 +12,36 @@ export function renderNode(vNode) {
         return document.createTextNode(vNode);
     }
     const {nodeName, attributes, children} = vNode;
-    let $node;
+    let $htmlElement;
 
-    if (typeof nodeName === "function") {
-
-        $node = renderComponent(nodeName)
-    } else {
-        $node = document.createElement(nodeName);
-        for (let key in attributes) {
-            $node.setAttribute(key, attributes[key]);
-        }
+    switch (typeof nodeName) {
+        case "function":
+            $htmlElement = renderComponent(nodeName, attributes)
+            break;
+        case "string":
+            $htmlElement = renderElement(nodeName, attributes)
+            break;
     }
-    children.forEach(child => mount(child, $node));
-    return $node;
+
+    children.forEach(child => mount(child, $htmlElement));
+
+    return $htmlElement;
 }
 
-
-export function renderComponent(Component) {
-    const component = new Component();
+export function renderComponent(Component, props) {
+    const component = new Component(props);
     const Vnode = component.render();
-    const $node = renderNode(Vnode);
-    component.$node = $node;
+    const $htmlElement = renderNode(Vnode);
+    component.$htmlElement = $htmlElement;
 
-    return $node
+    return $htmlElement
+}
+
+function renderElement(nodeName, attributes) {
+    const $htmlElement = document.createElement(nodeName);
+    for (let key in attributes) {
+        $htmlElement.setAttribute(key, attributes[key]);
+    }
+
+    return $htmlElement
 }

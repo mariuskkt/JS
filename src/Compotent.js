@@ -1,4 +1,4 @@
-import {hyperScript} from "./hyperScript";
+import {h} from './hyperScript';
 
 export class Component {
     constructor(props) {
