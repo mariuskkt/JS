@@ -2,8 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="970efce6-ed8f-472f-8a5a-de720c70f33e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Compotent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hyperScript.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mount.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderNode.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Car.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ferrari.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mercedes.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,6 +81,34 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="npm.build">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="watch" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="watch" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.watch" />
+        <item itemvalue="npm.build" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -85,7 +125,11 @@
       <workItem from="1589262619605" duration="13431000" />
       <workItem from="1589301720563" duration="1538000" />
       <workItem from="1589351880349" duration="31621000" />
-      <workItem from="1589780564357" duration="20729000" />
+      <workItem from="1589780564357" duration="21298000" />
+      <workItem from="1589870328656" duration="7731000" />
+      <workItem from="1589905329417" duration="4662000" />
+      <workItem from="1589956448276" duration="9972000" />
+      <workItem from="1590042534253" duration="3337000" />
     </task>
     <servers />
   </component>
