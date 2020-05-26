@@ -32,15 +32,20 @@ export function renderComponent(Component, props) {
     const component = new Component(props);
     const Vnode = component.render();
     const $htmlElement = renderNode(Vnode);
-    component.$htmlElement = $htmlElement;
+    component.$node = $htmlElement;
 
     return $htmlElement
 }
 
+
 function renderElement(nodeName, attributes) {
     const $htmlElement = document.createElement(nodeName);
     for (let key in attributes) {
-        $htmlElement.setAttribute(key, attributes[key]);
+        if (typeof attributes[key] === 'function') {
+            addEventListener(key, attributes[key])
+        } else {
+            $htmlElement.setAttribute(key, attributes[key]);
+        }
     }
 
     return $htmlElement

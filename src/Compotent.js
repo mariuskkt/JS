@@ -1,4 +1,5 @@
-import {h} from './hyperScript';
+import {renderNode} from "./renderNode";
+import {updateComponent} from "./updateComponent";
 
 export class Component {
     constructor(props) {
@@ -12,5 +13,6 @@ export class Component {
             ...this.state,
             ...state
         };
+        updateComponent(this)
     }
 }
