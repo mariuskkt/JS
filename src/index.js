@@ -1,8 +1,7 @@
 'use strict';
-import {h} from './hyperScript';
-import {mount} from './mount';
-import {App} from "./App";
-import {renderComponent, renderNode} from "./renderNode";
+import {App} from "./components/App";
+import {mount, h} from "./vdom/bootloader"
+
 
 mount(
     h(App),

@@ -1,5 +1,4 @@
-import {renderNode} from "./renderNode";
-import {updateComponent} from "./updateComponent";
+import {updateComponent} from "./bootloader"
 
 export class Component {
     constructor(props) {

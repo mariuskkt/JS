@@ -1,10 +1,10 @@
-import {renderNode} from "./renderNode";
+import {renderNode} from "./bootloader"
 
 export function updateComponent(component)
 {
     const $node = component.$node;
     const vNode = component.render();
     const $newNode = renderNode(vNode);
-    component.$node.replaceWith($newNode);
+    $node.replaceWith($newNode);
     component.$node = $newNode;
 }
